@@ -1,4 +1,4 @@
-SHELL := /usr/bin/env bash
+SHELL := /bin/sh
 DATE ?= $(shell date +%FT%T%z)
 BASE_PATH := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 VERSION ?= $(shell git describe --tags --always --match=v* 2> /dev/null || \
@@ -17,11 +17,11 @@ Q = $(if $(filter 1,$V),,@)
 # $M is a macro to print a colored ▶ character. Example `$(info $(M) running coverage tests…)` will print "▶ running coverage tests…"
 M = $(shell printf "\033[34;1m▶\033[0m")
 
-GREEN  := $(shell tput -Txterm setaf 2)
-YELLOW := $(shell tput -Txterm setaf 3)
-WHITE  := $(shell tput -Txterm setaf 7)
-CYAN   := $(shell tput -Txterm setaf 6)
-RESET  := $(shell tput -Txterm sgr0)
+GREEN  := $(shell)# tput -Txterm setaf 2)
+YELLOW := $(shell)# tput -Txterm setaf 3)
+WHITE  := $(shell)# tput -Txterm setaf 7)
+CYAN   := $(shell)# tput -Txterm setaf 6)
+RESET  := $(shell)# tput -Txterm sgr0)
 
 define global_option
     printf "  ${YELLOW}%-20s${GREEN}%s${RESET}\n" $(1) $(2)
