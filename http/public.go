@@ -106,6 +106,37 @@ var publicShareHandler = withHashFile(func(w http.ResponseWriter, r *http.Reques
 	return renderJSON(w, r, file)
 })
 
+// var publicShareaslocalGetsHandler = withUser(func(w http.ResponseWriter, r *http.Request, d *data) (int, error) {
+// 	file := d.raw.(*files.FileInfo)
+// 	// url = read file content
+// 	url := ""
+//     // Create a new request using http
+//     req, err := http.NewRequest("GET", url, nil)
+//     if err != nil {
+//         fmt.Println("Error creating request:", err)
+//         return "{}"
+//     }
+//     // Send the request using an http.Client
+//     client := &http.Client{
+// 		Timeout: time.Second * 10, // Set the timeout to 10 seconds
+// 	}
+//     resp, err := client.Do(req)
+//     if err != nil {
+//         fmt.Println("Error sending request:", err)
+//         return "{}"
+//     }
+//     defer resp.Body.Close()
+
+//     // Read the response body
+//     body, err := ioutil.ReadAll(resp.Body)
+//     if err != nil {
+//         fmt.Println("Error reading response body:", err)
+//         return "{}"
+//     }
+//     // Convert the body to type string and print
+//     return string(body)
+// })
+
 var publicDlHandler = withHashFile(func(w http.ResponseWriter, r *http.Request, d *data) (int, error) {
 	file := d.raw.(*files.FileInfo)
 	if !file.IsDir {
