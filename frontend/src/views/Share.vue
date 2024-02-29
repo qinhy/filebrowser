@@ -182,8 +182,8 @@
 <script>
 import { mapState, mapMutations, mapGetters } from "vuex";
 import { pub as api } from "@/api";
-import { filesize } from "filesize";
-import moment from "moment";
+import { filesize } from "@/utils";
+import moment from "moment/min/moment-with-locales";
 
 import HeaderBar from "@/components/header/HeaderBar.vue";
 import Action from "@/components/header/Action.vue";
